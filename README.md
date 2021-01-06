@@ -19,6 +19,7 @@
 1. Install Python on your computer - https://www.python.org/downloads/
     - To check if Python is installed by typing `python --version` in cmd
     - Also check for the pip version by typing `pip --version`
+        - I downloaded the latest version of Python and `pip` is already included in it.
 2. In the cmd, install robotframework by typing `pip install robotframework`
     - To check if robotframework is installed by typing `robot--version` in cmd
 3. In the cmd, install selenium libraries by typing `pip install robotframework-selenium2library`
@@ -38,3 +39,4 @@ How to run robot scripts:
 Notes:
 1. *IE11 is really unstable for automation tests. There are many articles supporting this in the web.*
 2. *Tests are unreliable when running in IE11 because they are so flaky. Due to several factors like the driver comapatibility issue and server issues.*
+3. *I encountered issues where the page gets stuck and throws and error for x amount of time. I am still looking for solutions. Thank you for understanding.*
