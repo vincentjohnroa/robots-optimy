@@ -8,6 +8,7 @@ ${LOGIN_BUTTON}                             css=div#tab-login > form > button
 ${INVALID_CREDENTIALS_ERROR}                css=div#login-invalid
 ${EMAIL_INLINE_ERROR}                       css=div#tab-login > form > div > span
 ${PASSWORD_INLINE_ERROR}                    css=div#tab-login > form > div:nth-of-type(2) > span
+${LOCKED_ACCOUNT_INLINE_ERROR}              css=div#login-too-many-attempts
 
 ${LOST_PASSWORD_BUTTON}                     css=div#tab-login > form > a
 ${RECOVERY_EMAIL_INPUT_FIELD}               css=div#tab-recovery-ask > form > div > input

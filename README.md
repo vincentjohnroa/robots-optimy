@@ -1,3 +1,19 @@
+# Repository Setup
+1. Install git on your computer - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+2. Login your github account or create a new one if you dont have any
+
+3. Click `create repository`
+
+4. Go to your cmd and type `git init`
+
+5. Go to your cmd and do these:
+    - Set your git username: `git config --global user.name "FIRST_NAME LAST_NAME"`
+    - Set your git email address: `git config --global user.email "MY_NAME@example.com"`
+
+6. Type this in the cmd `git remote add origin https://github.com/<repository name>.git`
+    - This will allow you to add commits and push your changes to your repository
+
 # Robot Framework Optimy Setup and Pre-requisites
 
 1. Install Python on your computer - https://www.python.org/downloads/

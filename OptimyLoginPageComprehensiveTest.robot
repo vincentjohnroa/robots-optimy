@@ -30,6 +30,11 @@ Failed To Login With Incorrect Credentials
     And User Clicks Element    ${LOGIN_BUTTON}
     Then Invalid Account Error Should Be Visible    The email address or password is incorrect.
 
+Failed To Login Due To Locked Account Credentials
+    Given User Is In Optimy Login Page
+    When User Inputs Login Credentials Until It Is Locked    abc@gmail.com    abcdes
+    Then Locked Account Error Should Be Visible    This account has been locked due to too many failed login attempts.
+
 Failed To Recover Login Credentials With Invalid Email
     Given User Is In Optimy Login Page
     When User Clicks Element    ${LOST_PASSWORD_BUTTON}
