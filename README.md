@@ -33,7 +33,7 @@
 
 How to run robot scripts:
 1. Go to the directory where you installed your test scripts (.robot files)
-2. Type this in the terminal robot "your test script name".robot
+2. Type this in the terminal `robot "your test script name".robot`
 
 Notes:
 1. *IE11 is really unstable for automation tests. There are many articles supporting this in the web.*
