@@ -1,5 +1,5 @@
 *** Settings ***
-Library     Selenium2Library
+Library     SeleniumLibrary
 Library    String
 Resource    optimy_login_page_constants.robot
 
