@@ -1,46 +1,46 @@
-# name: Robot test
-
-# on:
-#   push:
-#     branches: [ master ]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         python-version: [3.9]
-
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Build using python ${{ matrix.python-version }}
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: ${{ matrix.python-version }}
-          
-#       - name: Install dependencies [pip]
-#         run: |
-#           python -m pip install pip --upgrade pip
-#           pip install robotframework
-#           pip install robotframework-selenium2library
-          
-#       - name: Run Robot Tests
-#         run: robot -i OptimyLoginPageComprehensiveTest .
-      
-name: Robot Framework
+name: Robot test
 
 on:
   push:
     branches: [ master ]
-jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1
-          env:
-            BROWSER: chrome
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/OptimyLoginPageComprehensiveTest.robot
 
-            path: ${{ github.workspace }}/reports
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build using python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          
+      - name: Install dependencies [pip]
+        run: |
+          python -m pip install pip --upgrade pip
+          pip install robotframework
+          pip install robotframework-selenium2library
+          
+      - name: Run Robot Tests
+        run: robot -d rep -i OptimyLoginPageComprehensiveTest .
+      
+# name: Robot Framework
+
+# on:
+#   push:
+#     branches: [ master ]
+# jobs:
+#     test:
+#         runs-on: ubuntu-latest
+#         steps:
+#         - uses: actions/checkout@v2
+#         - name: Execute tests
+#           uses: joonvena/robotframework-docker-action@v0.1
+#           env:
+#             BROWSER: chrome
+#             ROBOT_TESTS_DIR: ${{ github.workspace }}/OptimyLoginPageComprehensiveTest.robot
+
+#             path: ${{ github.workspace }}/reports
