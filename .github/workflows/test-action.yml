@@ -42,5 +42,3 @@ jobs:
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/OptimyLoginPageComprehensiveTest.robot
-
-#             path: ${{ github.workspace }}/reports
