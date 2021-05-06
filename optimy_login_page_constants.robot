@@ -20,4 +20,4 @@ ${INVALID_CREDENTIALS_ERROR}                css=div#login-invalid
 ${EMAIL_INLINE_ERROR}                       css=div#tab-login > form > div > span
 ${PASSWORD_INLINE_ERROR}                    css=div#tab-login > form > div:nth-of-type(2) > span
 ${LOCKED_ACCOUNT_INLINE_ERROR}              css=div#login-too-many-attempts
-${LOST_PASSWORD_testINLINE_ERROR}               css=div#tab-recovery-ask > form > div > span
+${LOST_PASSWORD_INLINE_ERROR}               css=div#tab-recovery-ask > form > div > span
