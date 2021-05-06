@@ -13,8 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-#       - uses: browser-actions/setup-chrome@latest
-#       - uses: nanasess/setup-chromedriver@master
+      - uses: nanasess/setup-chromedriver@master
       - name: Build using python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -27,7 +26,6 @@ jobs:
           pip install robotframework-selenium2library
           sudo apt-get update
           sudo apt-get --only-upgrade install google-chrome-stable
-          sudo apt-get install chromium-chromedriver
           google-chrome --version
           chromedriver --version
           
