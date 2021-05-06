@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    [OPTIMY:LOGIN] This test suite will test the negative scenarios for logging in Optimy.
 Default Tags    OptimyLoginPageComprehensiveTest
-Suite Setup    Open Optimy Login Page    chrome
+Suite Setup    Open Optimy Login Page
 Suite Teardown    Close All Browsers
 Resource    optimy_login_page_keywords.robot
 
