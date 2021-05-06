@@ -30,7 +30,9 @@ jobs:
           chromedriver --version
           
       - name: Run Robot Tests
-        run: robot -d rep -i OptimyLoginPageComprehensiveTest .
+        run: |
+          robot -d rep -i OptimyLoginPageComprehensiveTest .
+          echo /home/runner/work/robots-actions/robots-actions/rep/log.html
 
 
 # name: Robot Framework
