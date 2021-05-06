@@ -13,7 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Create folder for reports
+        run: mkdir reports
       - uses: nanasess/setup-chromedriver@master
+      
+      
       - name: Build using python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -32,7 +36,13 @@ jobs:
       - name: Run Robot Tests
         run: |
           robot -d rep -i OptimyLoginPageComprehensiveTest .
-          echo /home/runner/work/robots-actions/robots-actions/rep/log.html
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: reports
+          path: ${{ github.workspace }}/reports
 
 
 # name: Robot Framework
