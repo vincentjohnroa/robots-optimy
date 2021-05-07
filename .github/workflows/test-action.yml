@@ -1,62 +1,63 @@
-name: Robot test
-
-on:
-  push:
-    branches: [ master ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Create folder for reports
-        run: mkdir reports
-      - uses: nanasess/setup-chromedriver@master
-      
-      
-      - name: Build using python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-          
-      - name: Install dependencies [pip]
-        run: |
-          python -m pip install pip --upgrade pip
-          pip install robotframework
-          pip install robotframework-selenium2library
-          sudo apt-get update
-          sudo apt-get --only-upgrade install google-chrome-stable
-          google-chrome --version
-          chromedriver --version
-          
-      - name: Run Robot Tests
-        run: |
-          robot -d rep -i OptimyLoginPageComprehensiveTest .
-
-      - name: Upload reports
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: reports
-          path: ${{ github.workspace }}/reports
-
-
-# name: Robot Framework
+# name: Robot test
 
 # on:
 #   push:
 #     branches: [ master ]
+
 # jobs:
-#     test:
-#         runs-on: ubuntu-latest
-#         steps:
-#         - uses: actions/checkout@v2
-#         - name: Execute tests
-#           uses: joonvena/robotframework-docker-action@v0.1
-#           env:
-#             BROWSER: chrome
-#             ROBOT_TESTS_DIR: ${{ github.workspace }}/vincentjohnroa/dummy
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         python-version: [3.9]
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Create folder for reports
+#         run: mkdir reports
+#       - uses: nanasess/setup-chromedriver@master
+      
+      
+#       - name: Build using python ${{ matrix.python-version }}
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: ${{ matrix.python-version }}
+          
+#       - name: Install dependencies [pip]
+#         run: |
+#           python -m pip install pip --upgrade pip
+#           pip install robotframework
+#           pip install robotframework-selenium2library
+#           sudo apt-get update
+#           sudo apt-get --only-upgrade install google-chrome-stable
+#           google-chrome --version
+#           chromedriver --version
+          
+#       - name: Run Robot Tests
+#         run: |
+#           robot -d rep -i OptimyLoginPageComprehensiveTest .
+
+#       - name: Upload reports
+#         uses: actions/upload-artifact@v1
+#         if: always()
+#         with:
+#           name: reports
+#           path: ${{ github.workspace }}/reports
+
+
+name: Robot Framework
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Execute tests
+          uses: joonvena/robotframework-docker-action@v0.1
+          env:
+            BROWSER: chrome
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/OptimyLoginPageComprehensiveTest.robot
+
