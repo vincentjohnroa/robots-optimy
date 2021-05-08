@@ -50,6 +50,10 @@ name: Robot Framework
 on:
   push:
     branches: [ master ]
+    
+env:
+  GITHUB_REPOSITORY: vincentjohnroa/dummy
+
 jobs:
     test:
         runs-on: ubuntu-latest
