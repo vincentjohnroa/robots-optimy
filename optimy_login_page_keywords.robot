@@ -6,8 +6,6 @@ Resource    optimy_login_page_constants.robot
 *** Keywords ***
 ### SETUP KEYWORDS ###
 Open Optimy Login Page
-    # [Arguments]    ${p_browser}    #choices are chrome, firefox and ie
-    # Open Browser    ${LOGIN_PAGE_URL}    ${p_browser}
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
