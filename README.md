@@ -39,4 +39,4 @@ How to run robot scripts:
 Notes:
 1. *IE11 is really unstable for automation tests. There are many articles supporting this in the web.*
 2. *Tests are unreliable when running in IE11 because they are so flaky. Due to several factors like the driver comapatibility issue and server issues.*
-3. *I encountered issues where the page gets stuck and throws and error for x amount of time. I am still looking for solutions. Thank you for understanding.*
+3. *I encountered issues where the page gets stuck and throws and error for x amount of time. I am still looking for solutions. Thank you for understanding.*sasa
