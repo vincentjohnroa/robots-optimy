@@ -42,4 +42,4 @@ jobs:
           
       - name: Run Robot Tests
         run: |
-          robot -d rep -i OptimyLoginPageComprehensiveTest .
+          robot -d rep -i OptimyLoginPageComprehensiveTestpalitan .
